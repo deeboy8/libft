@@ -62,6 +62,7 @@ int	ft_whitespace(int i);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+void	ft_putendl(char const *s);
 
 
 #endif

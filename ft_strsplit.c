@@ -2,33 +2,30 @@
 
 static int	wordscount(char const *s, char c)
 {
-	int numwords;
+	int wordcount;
 	
-	numwords = 0;
+	wordcount = 0;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s != c && *s != '\0')
-			numwords++;
+			wordcount++;
 		while (*s != c && *s != '\0')
 			s++;
 	}
-	return (numwords);
+	return (wordcount);
 }
 
 static int	ft_wordlen(char const *s, char c)
 {
 	int j;
 
-	while (*s != '\0')
+	j = 0;
+	while (*s != c && *s != '\0')
 	{
-		j = 0;
-		while (*s != c && *s != '\0')
-		{
-			j++;
-			s++;
-		}
+		j++;
+		s++;
 	}
 	return (j);
 }
