@@ -2,11 +2,17 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	char *p;
-
-	p = (char *)malloc(sizeof(char) * (len + 1));
-	if (p == NULL || s == NULL)
+	size_t	i;
+	char	*newstring;
+	
+	i = 0;
+	if (!(newstring = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	p = ft_strncpy(p, (char *)s + start, len);
-	return (p);
+	while (i < len)
+	{
+		newstring[i] = s[start + i];
+		i++;
+	}
+	newstring[i] = 0;
+	return (newstring);
 }

@@ -61,4 +61,7 @@ char	*ft_strtrim(char const *s);
 int	ft_whitespace(int i);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+
+
 #endif

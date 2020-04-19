@@ -1,34 +1,28 @@
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
-	char	*p;
-	unsigned int start;
-	unsigned int end;
-	unsigned int length;
+	char	*str;
+	int	i;
+	int	j;
+	int	len;
 
-	start = 0;
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	length = (unsigned int)ft_strlen(s); 
-	while (ft_whitespace(s[start]))
-		start++;
-	//printf("Start value is: %u\n", start);
-	end = length;
-	//printf("The total length/end is: %u\n", end);
-	if (length > start)
-	{
-		while (ft_whitespace(s[end]))
-		end--;
-	}
-	//printf("%u, %u\n", end, start);
-	length = end - start;
-	p = (char *)malloc(sizeof(char) * ((length) + 1));
-	if (p == NULL)
+	len = ft_strlen(s);
+	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+		len--;
+	i = -1;
+	while (s[++i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		len--;
+	if (len <= 0)
+		len = 0;
+	str = (char*)malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
-	p = (ft_strncpy(p, (char *)s + start, length));
-	return (p);
-	
+	j = 0;
+	while (j < len)
+		str[j++] = s[i++];
+	str[j] = '\0';
+	return (str);
 }
-

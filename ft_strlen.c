@@ -9,15 +9,16 @@
 /*   Updated: 2020/03/06 11:16:58 by dbooker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int		ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int index;
 
 	index = 0;
 	while (str[index] != '\0')
-	{
 		index++;
-	}
 	return (index);
 }
+
+
